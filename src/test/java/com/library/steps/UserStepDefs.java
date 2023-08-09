@@ -1,5 +1,6 @@
 package com.library.steps;
 
+import com.library.pages.LoginPage;
 import com.library.utility.DB_Util;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,13 +11,14 @@ import java.util.List;
 
 public class UserStepDefs {
 
+
     String actualUsersCount;
     String expectedUserCount;
     List<String> actualColumnNames;
 
     @Given("Establish the database connection")
     public void establish_the_database_connection() {
-        System.out.println("Connection to DB - in Hooks class");
+        System.out.println("Connection to DB - in Hooks");
     }
 
     @When("Execute query to get all IDs from users")
