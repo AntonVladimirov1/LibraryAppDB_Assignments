@@ -20,7 +20,6 @@ public class ConfigurationReader {
               FileInputStream file = new FileInputStream("config.properties");
               // Load "properties" object with the "file" we opened using FileInputStream
               properties.load(file);
-
           } catch (IOException e) {
               System.out.println("File not found in ConfigurationReader class");
              e.printStackTrace();
