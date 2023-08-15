@@ -22,31 +22,24 @@ public class DB_Util {
      * @param password password for database
      */
     public static void createConnection(String url , String username, String password){
-
-
         try {
             con = DriverManager.getConnection(url, username, password) ;
             System.out.println("CONNECTION SUCCESSFUL");
         } catch (Exception e) {
             System.out.println("CONNECTION HAS FAILED " + e.getMessage() );
         }
-
     }
-
 
     /**
      * Create connection method , just checking one connection successful or not
      */
     public static void createConnection(){
-
         String url      = ConfigurationReader.getProperty("library2.db.url") ;
         String username = ConfigurationReader.getProperty("library2.db.username") ;
         String password = ConfigurationReader.getProperty("library2.db.password") ;
 
         createConnection(url, username, password);
-
     }
-
 
     /**
      * Run the sql query provided and return ResultSet object
@@ -54,7 +47,6 @@ public class DB_Util {
      * @return ResultSet object  that contains data
      */
     public static ResultSet runQuery(String sql){
-
         try {
             stm = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = stm.executeQuery(sql); // setting the value of ResultSet object
@@ -62,9 +54,7 @@ public class DB_Util {
         }catch(Exception e){
             System.out.println("ERROR OCCURRED WHILE RUNNING QUERY "+ e.getMessage() );
         }
-
         return rs ;
-
     }
 
     /**
