@@ -8,13 +8,14 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
 public class Hooks {
-
     @Before
     public void setUp(){
+        //WebDriver driver = Driver.getDriver(); - can be useful to simplify driver call in different Classes
         System.out.println("browser Driver from BEFORE");
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
     }
