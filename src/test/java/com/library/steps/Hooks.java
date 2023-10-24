@@ -19,7 +19,7 @@ public class Hooks {
         System.out.println("browser Driver from BEFORE");
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
     }
-    @After
+    //@After
     public void tearDown(Scenario scenario){
         System.out.println("close Driver from AFTER");
         if(scenario.isFailed()){
